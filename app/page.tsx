@@ -8,6 +8,8 @@ const featuredProjects = [
     description: "A full-stack marketplace where learners discover academies, book courses with trainers, and manage their schedules — with a dedicated management dashboard for academies.",
     tags: ["Django REST", "React", "JWT", "Tailwind"],
     href: "https://learn-2-drive.onrender.com/",
+    image: "/work/learn2drive-presentation.webp",
+    imageAlt: "Learn2Drive platform presentation cover",
     accent: "cyan",
   },
   {
@@ -17,6 +19,8 @@ const featuredProjects = [
     description: "A complete e-commerce experience with dynamic filtering, cart and wishlist flows, authentication, checkout, and a responsive customer dashboard.",
     tags: ["Django", "AJAX", "SQLite", "Tailwind"],
     href: "https://my-django-site-d0vm.onrender.com/",
+    image: "/work/peak-health-showcase.webp",
+    imageAlt: "Peak Health responsive supplement store showcase",
     accent: "violet",
   },
 ];
@@ -52,6 +56,7 @@ export default function Home() {
           </a>
           <div className="flex items-center gap-1 text-sm text-[#665d64] sm:gap-3">
             <a className="nav-link" href="#work">Work</a>
+            <a className="nav-link" href="#design">Design</a>
             <a className="nav-link" href="#about">About</a>
             <a className="nav-link" href="#contact">Contact</a>
           </div>
@@ -113,7 +118,11 @@ export default function Home() {
             <article key={project.title} className={`project-card ${project.accent}`}>
               <div className="relative z-10 flex h-full flex-col">
                 <div className="flex items-center justify-between font-mono text-xs text-[#81757c]"><span>PROJECT / {project.index}</span><ArrowUpRight size={19} /></div>
-                <div className="mt-24 sm:mt-32">
+                <a className="project-media mt-7" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} preview in full size`}>
+                  <img src={project.image} alt={project.imageAlt} loading="lazy" />
+                  <span>Open full preview <ArrowUpRight size={15} /></span>
+                </a>
+                <div className="mt-8">
                   <p className="mb-2 text-sm font-medium text-[#81757c]">{project.label}</p>
                   <h3 className="text-3xl font-semibold tracking-tight text-[#201a24] sm:text-4xl">{project.title}</h3>
                   <p className="mt-4 max-w-xl leading-7 text-[#665d64]">{project.description}</p>
@@ -139,6 +148,30 @@ export default function Home() {
               <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}</div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="design" className="border-y border-black/8 bg-[#efe1d2]/35">
+        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
+          <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div><p className="eyebrow">Visual design work</p><h2 className="section-title">A different side of how I build.</h2></div>
+            <p className="max-w-md text-base leading-7 text-[#81757c]">Selected visual work that shows composition, product presentation, and attention to brand mood beyond the code.</p>
+          </div>
+          <article className="design-feature">
+            <a className="design-media" href="/work/atrak-bianco-latte.webp" target="_blank" rel="noreferrer" aria-label="Open the Atrak Bianco Latte design in full size">
+              <img src="/work/atrak-bianco-latte.webp" alt="Bianco Latte perfume advertisement created for Atrak" loading="lazy" />
+              <span>View full design <ArrowUpRight size={15} /></span>
+            </a>
+            <div className="design-copy">
+              <p className="font-mono text-xs uppercase tracking-[.18em] text-[#81757c]">Featured visual / 01</p>
+              <p className="mt-7 text-sm font-medium text-[#81757c]">Perfume campaign concept</p>
+              <h3 className="mt-2 text-4xl font-semibold tracking-[-.04em] text-[#201a24] sm:text-5xl">Atrak — Bianco Latte</h3>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-[#665d64]">A premium social-media product visual developed from an initial Canva direction and completed in Photoshop, with a focus on depth, contrast, and an elegant fragrance identity.</p>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {["Canva", "Adobe Photoshop", "Social Media Design"].map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

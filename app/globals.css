@@ -177,7 +177,6 @@ button {
 }
 .project-card {
   position: relative;
-  min-height: 520px;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 1.5rem;
@@ -212,6 +211,70 @@ button {
 }
 .project-card:hover::before {
   transform: scale(1.2) translate(-1rem, 1rem);
+}
+.project-media,
+.design-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(32, 26, 36, 0.12);
+  background: #242122;
+}
+.project-media {
+  aspect-ratio: 16 / 10;
+  border-radius: 1.1rem;
+}
+.project-media img,
+.design-media img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s ease;
+}
+.project-media img {
+  object-fit: contain;
+}
+.project-media span,
+.design-media span {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(32, 26, 36, 0.78);
+  padding: 0.5rem 0.7rem;
+  color: #fffaf3;
+  font-size: 0.72rem;
+  backdrop-filter: blur(10px);
+}
+.project-media:hover img,
+.design-media:hover img {
+  transform: scale(1.025);
+}
+.design-feature {
+  display: grid;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.6rem;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  background: rgba(255, 250, 243, 0.72);
+  box-shadow: 0 28px 80px rgba(74, 49, 42, 0.1);
+}
+.design-media {
+  aspect-ratio: 2 / 3;
+  max-height: 700px;
+  border-radius: 1.1rem;
+  background: #0e4d49;
+}
+.design-media img {
+  object-fit: cover;
+}
+.design-copy {
+  padding: clamp(0.5rem, 3vw, 2rem) clamp(0.4rem, 3vw, 2.5rem);
 }
 .tech-pill {
   border: 1px solid rgba(32, 26, 36, 0.12);
@@ -282,14 +345,18 @@ button {
   .contact-panel {
     grid-template-columns: 1.3fr 0.7fr;
   }
+  .design-feature {
+    grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  }
 }
 
 @media (max-width: 640px) {
   .floating-chip {
     display: none;
   }
-  .project-card {
-    min-height: 470px;
+  .project-media span,
+  .design-media span {
+    font-size: 0.66rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
