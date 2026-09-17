@@ -33,10 +33,11 @@ const otherProjects = [
   },
   {
     title: "ChatFlow",
-    description: "A chat app with account authentication, searchable profiles, direct conversations, and a responsive React interface.",
+    description: "A chat app with account authentication, searchable profiles, direct conversations, and an automated contact for solo demos.",
     tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
-    href: "https://github.com/KareemKhaled44/chatflow",
-    linkLabel: "View source code",
+    href: "https://chatflow-kareem44-web.onrender.com/",
+    linkLabel: "Try live demo",
+    sourceHref: "https://github.com/KareemKhaled44/chatflow",
     image: "/work/chatflow-visual.webp",
     imageAlt: "ChatFlow Canva concept artwork with a phone and chat bubbles",
   },
@@ -155,6 +156,7 @@ export default function Home() {
               <p className="mt-4 leading-7 text-[#81757c]">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}</div>
               {"href" in project && project.href && <a className="mt-7 inline-flex w-fit items-center gap-2 font-medium text-[#b74428] hover:text-[#38685d]" href={project.href} target="_blank" rel="noreferrer">{project.linkLabel} <ArrowUpRight size={17} /></a>}
+              {"sourceHref" in project && project.sourceHref && <a className="mt-3 inline-flex w-fit items-center gap-2 text-sm font-medium text-[#665d64] hover:text-[#38685d]" href={project.sourceHref} target="_blank" rel="noreferrer">View source code <ArrowUpRight size={15} /></a>}
             </article>
           ))}
         </div>
