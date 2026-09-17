@@ -33,8 +33,10 @@ const otherProjects = [
   },
   {
     title: "ChatFlow",
-    description: "A social chat experience with account authentication, personal profiles, friend connections, and a responsive React interface.",
+    description: "A chat app with account authentication, searchable profiles, direct conversations, and a responsive React interface.",
     tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
+    href: "https://github.com/KareemKhaled44/chatflow",
+    linkLabel: "View source code",
   },
 ];
 
@@ -146,6 +148,7 @@ export default function Home() {
               </div>
               <p className="mt-4 leading-7 text-[#81757c]">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}</div>
+              {"href" in project && project.href && <a className="mt-7 inline-flex w-fit items-center gap-2 font-medium text-[#b74428] hover:text-[#38685d]" href={project.href} target="_blank" rel="noreferrer">{project.linkLabel} <ArrowUpRight size={17} /></a>}
             </article>
           ))}
         </div>
