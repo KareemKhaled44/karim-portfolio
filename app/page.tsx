@@ -23,6 +23,17 @@ const featuredProjects = [
     imageAlt: "Peak Health responsive supplement store showcase",
     accent: "violet",
   },
+  {
+    index: "03",
+    title: "ChatFlow",
+    label: "Real-time chat application",
+    description: "A chat app with account authentication, searchable profiles, direct conversations, and an automated contact for solo demos.",
+    tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
+    href: "https://chatflow-kareem44-web.onrender.com/",
+    image: "/work/chatflow-visual.webp",
+    imageAlt: "ChatFlow interactive chat application showcase",
+    accent: "cyan",
+  },
 ];
 
 const otherProjects = [
@@ -30,16 +41,6 @@ const otherProjects = [
     title: "Gym Management System",
     description: "Member registration, subscriptions, attendance tracking, and automated expiry handling through an efficient Django Admin workflow.",
     tags: ["Django", "Python", "SQLite", "Django Admin"],
-  },
-  {
-    title: "ChatFlow",
-    description: "A chat app with account authentication, searchable profiles, direct conversations, and an automated contact for solo demos.",
-    tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
-    href: "https://chatflow-kareem44-web.onrender.com/",
-    linkLabel: "Try live demo",
-    sourceHref: "https://github.com/KareemKhaled44/chatflow",
-    image: "/work/chatflow-visual.webp",
-    imageAlt: "ChatFlow Canva concept artwork with a phone and chat bubbles",
   },
 ];
 
