@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: karim-khaled-portfolio
+    runtime: static
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm run build
+    staticPublishPath: ./out

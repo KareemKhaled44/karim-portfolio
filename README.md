@@ -1,14 +1,14 @@
 # Karim Khaled Portfolio
 
-Personal portfolio built with React, TypeScript, Tailwind CSS, Vinext, and Vite.
+Personal portfolio built with Next.js, React, TypeScript, and Tailwind CSS. It exports to static HTML and assets for Render.
 
 ## Run locally
 
-Requirements: Node.js 22.13 or newer.
+Requirements: Node.js 22.22.0 (see `.node-version`) and Corepack.
 
 ```bash
-npm install
-npm run dev
+corepack pnpm install --frozen-lockfile
+corepack pnpm run dev
 ```
 
 Then open the local URL printed in the terminal.
@@ -16,8 +16,16 @@ Then open the local URL printed in the terminal.
 ## Build for production
 
 ```bash
-npm run build
+corepack pnpm run build
 ```
+
+The build generates an `out/` directory containing `index.html`, the CV, images, and other assets.
+
+## Deploy on Render
+
+1. Connect this GitHub repo (`KareemKhaled44/karim-portfolio`) to Render as a **Static Site**. You can use the repo's `render.yaml` as a Blueprint.
+2. If setting up the Static Site manually, use branch `main`, build command `corepack pnpm install --frozen-lockfile && corepack pnpm run build`, and publish directory `out`.
+3. Render will rebuild when new commits are pushed to `main`. Do not select a Web Service; the portfolio needs no running server.
 
 ## Where to edit
 
@@ -33,10 +41,10 @@ Open `app/globals.css` and edit the variables at the top:
 
 ```css
 :root {
-  --background: #07101e;
-  --foreground: #e8f0ff;
-  --primary: #67e8f9;
-  --secondary: #a78bfa;
+  --background: #f7efe5;
+  --foreground: #201a24;
+  --primary: #d95d39;
+  --secondary: #4b7f72;
 }
 ```
 
