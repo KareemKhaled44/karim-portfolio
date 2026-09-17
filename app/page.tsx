@@ -37,6 +37,8 @@ const otherProjects = [
     tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
     href: "https://github.com/KareemKhaled44/chatflow",
     linkLabel: "View source code",
+    image: "/work/chatflow-visual.webp",
+    imageAlt: "ChatFlow Canva concept artwork with a phone and chat bubbles",
   },
 ];
 
@@ -144,7 +146,11 @@ export default function Home() {
                   <p className="mb-3 font-mono text-xs uppercase tracking-[.15em] text-[#81757c]">Additional project</p>
                   <h3 className="text-2xl font-semibold tracking-tight text-[#201a24]">{project.title}</h3>
                 </div>
-                <Layers3 className="text-[#d95d39]" size={22} />
+                {"image" in project && project.image ? (
+                  <a className="compact-project-preview" href={project.image} target="_blank" rel="noreferrer" aria-label="Open ChatFlow concept artwork in full size">
+                    <img src={project.image} alt={project.imageAlt} loading="lazy" />
+                  </a>
+                ) : <Layers3 className="text-[#d95d39]" size={22} />}
               </div>
               <p className="mt-4 leading-7 text-[#81757c]">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}</div>
