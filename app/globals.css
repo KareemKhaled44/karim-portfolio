@@ -190,20 +190,35 @@ button {
 .project-card::before {
   content: "";
   position: absolute;
+  z-index: 0;
   width: 18rem;
   height: 18rem;
   border-radius: 999px;
   right: -6rem;
   top: -7rem;
-  filter: blur(18px);
-  opacity: 0.22;
+  filter: blur(10px);
+  opacity: 0.34;
   transition: transform 0.5s;
 }
-.project-card.cyan::before {
-  background: #e98b5d;
+.project-card > * {
+  position: relative;
+  z-index: 1;
 }
-.project-card.violet::before {
-  background: #7ba99a;
+.project-card.learn2drive::before {
+  right: -4.5rem;
+  top: -5.5rem;
+  background: #79cfe5;
+  filter: blur(6px);
+  opacity: 0.52;
+}
+.project-card.peak-health::before {
+  background: #b9a848;
+}
+.project-card.chatflow::before {
+  background: #d8a0bf;
+}
+.project-card.gym::before {
+  background: #8fc3a5;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -234,7 +249,8 @@ button {
   object-fit: contain;
 }
 .project-media span,
-.design-media span {
+.design-media span,
+.compact-project-preview span {
   position: absolute;
   right: 0.8rem;
   bottom: 0.8rem;
@@ -305,20 +321,18 @@ button {
 }
 .compact-project-preview {
   display: block;
-  flex: 0 0 clamp(6rem, 12vw, 8.5rem);
-  width: clamp(6rem, 12vw, 8.5rem);
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   border: 1px solid rgba(39, 88, 157, 0.22);
-  border-radius: 1rem;
-  background: #347bea;
+  border-radius: 1.1rem;
+  background: #242122;
   box-shadow: 0 12px 28px rgba(35, 83, 158, 0.18);
 }
 .compact-project-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 .compact-project-preview:hover img {

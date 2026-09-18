@@ -10,7 +10,7 @@ const featuredProjects = [
     href: "https://learn-2-drive.onrender.com/",
     image: "/work/learn2drive-presentation.webp",
     imageAlt: "Learn2Drive platform presentation cover",
-    accent: "cyan",
+    accent: "learn2drive",
   },
   {
     index: "02",
@@ -21,7 +21,7 @@ const featuredProjects = [
     href: "https://my-django-site-d0vm.onrender.com/",
     image: "/work/peak-health-showcase.webp",
     imageAlt: "Peak Health responsive supplement store showcase",
-    accent: "violet",
+    accent: "peak-health",
   },
   {
     index: "03",
@@ -30,17 +30,22 @@ const featuredProjects = [
     description: "A chat app with account authentication, searchable profiles, direct conversations, and an automated contact for solo demos.",
     tags: ["Django REST", "React", "Simple JWT", "Tailwind"],
     href: "https://chatflow-kareem44-web.onrender.com/",
-    image: "/work/chatflow-visual.webp",
+    image: "/work/chatflow.png",
     imageAlt: "ChatFlow interactive chat application showcase",
-    accent: "cyan",
+    accent: "chatflow",
   },
 ];
 
 const otherProjects = [
   {
+    index: "04",
     title: "Gym Management System",
     description: "Member registration, subscriptions, attendance tracking, and automated expiry handling through an efficient Django Admin workflow.",
     tags: ["Django", "Python", "SQLite", "Django Admin"],
+    href: "https://github.com/KareemKhaled44/Gym-Management-System.git",
+    image: "/work/gym management system.png",
+    imageAlt: "Gym Management System showcase",
+    accent: "gym",
   },
 ];
 
@@ -138,20 +143,22 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-5 grid gap-5 md:grid-cols-2">
           {otherProjects.map((project) => (
-            <article key={project.title} className="compact-project">
+            <article key={project.title} className={`compact-project project-card ${project.accent}`}>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-[.15em] text-[#81757c]">Additional project</p>
-                  <h3 className="text-2xl font-semibold tracking-tight text-[#201a24]">{project.title}</h3>
+                  <p className="mb-3 font-mono text-xs uppercase tracking-[.15em] text-[#81757c]">Project / {project.index}</p>
                 </div>
                 <Layers3 className="text-[#d95d39]" size={22} />
               </div>
+              <a className="compact-project-preview mt-6" href={project.image} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} preview in full size`}>
+                <img src={project.image} alt={project.imageAlt} loading="lazy" />
+                <span>Open full preview <ArrowUpRight size={15} /></span>
+              </a>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight text-[#201a24]">{project.title}</h3>
               <p className="mt-4 leading-7 text-[#81757c]">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span className="tech-pill" key={tag}>{tag}</span>)}</div>
+              <a className="mt-7 inline-flex items-center gap-2 font-medium text-[#b74428] hover:text-[#38685d]" href={project.href} target="_blank" rel="noreferrer">View source code <ArrowUpRight size={17} /></a>
             </article>
           ))}
         </div>
